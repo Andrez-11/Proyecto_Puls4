@@ -1,5 +1,5 @@
 <?php
-	include("../class/comentarios_class.php");
+	include("../clases/comentarios_class.php");
 	if (isset($_POST["contenido"])){
 		$user=$_POST["user"];
 		$post=$_POST["post"];

@@ -1,5 +1,5 @@
 <?php
-	include("conexion_class.php");
+	include("conexion.class.php");
 	class comentarios{
 		function comentarios(){
 			$this->conexion = new conexion();

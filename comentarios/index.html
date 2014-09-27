@@ -10,93 +10,7 @@
 		<link rel="stylesheet" href="../css/jquery-ui.structure.css">
 		<link rel="stylesheet" href="../css/normalize.css">
 		<link rel="stylesheet" href="../css/puls4.css">
-		<!--<link rel="stylesheet" href="../css/estilos.css">
-			.comment {
-				display:block;
-			} -->
-		<style>
-			body {
-				background: #ddd;
-				font-family: arial,verdana;
-				font-size: 14px;
-			}
-			h2 {
-				background: #ddd;
-				text-align: center;
-			}
-			h3 {
-				display: inline-block;
-				line-height: 2em;
-				margin-left: 1em;
-				width: 5em;
-			}
-			.alias {
-				display: inline-block;
-			}
-			.avatar {
-				display:inline-block;
-				height: 4.5em;
-				width: 6.5em;
-			}
-			.comment {
-				border-radius: 2.5%;
-				border-style: dotted; 
-				border-width: 1px;				
-				margin-top: 0.1em;
-			}
-			.fecha {
-				display: inline-block;
-				text-align: right;
-				width:19em;
-			}
-			.logo {
-				display: inline-block;
-				width: 6.5em;
-			}
-			#comen {
-				width:90%;
-			}
-			#comentarios {
-				background: #eee;
-				bottom: 2.5em;
-				height: 92em;
-				margin-left: 2.5em;
-				top: 2.5em;
-				width: 35em;
-			}
-			#contenedor {
-			    background: rgb(255,255,255); /* Old browsers */
-			    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(238,238,238,1) 100%); /* FF3.6+ */
-			    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(238,238,238,1))); /* Chrome,Safari4+ */
-			    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* Chrome10+,Safari5.1+ */
-			    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* Opera 11.10+ */
-			    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* IE10+ */
-			    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* W3C */
-			    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
-
-			    border-radius: 3px;
-			    border-width: 1px;
-			    left: 30%;
-			    padding-top: 1em; 
-			    position: relative;
-			    width: 40em;
-
-			    /*height: 92em;
-				margin-left: 30%;
-			    padding: 1em;
-			    position: relative;
-			    margin: 10px 0px 10px 350px;
-			    z-index: 0;   */
-
-			}
-			#insertar {
-				background: #ddd;
-				bottom: 7.5em;
-				margin-left: 2.5em;
-				position: fixed;
-				width:35em;
-			}
-		</style>
+		<link rel="stylesheet" href="../css/comentarios.css">
 	</head>
 
 	<body>
@@ -138,14 +52,13 @@
 				<input type="hidden" name="post" id="post" value="1">
 				<input type="hidden" name="user" id="user" value="1">
 				<div id="agregar">
-					<textarea class="comment" rows="2" cols="50" name="contenido" placeholder="Agrega tu Comentario"></textarea>
+					<textarea class="icomment" rows="2" cols="50" name="contenido" placeholder="Agrega tu Comentario"></textarea>
 					<input type="button" id="comentar" value="Comentar">
 				</div>
 		
 				<hr>
-				<label for="busca">Buscar</label>
+				<label for="busca" id="lbusca">Buscar</label>
 				<input type="text" name="busca" id="busca" value="" placeholder="Texto a Buscar">
-				<hr>
 			</form>
 
 		</div>
@@ -208,7 +121,17 @@
 					alert("Este comentario no puedes modificarlo, ya que no eres el Propietario");
 				}
 			});
-		</script>
 
+			$(window).scroll(function(){
+			    if (($(window).scrollTop()+$("footer").height()+$(".comment").last().height()) >= ($(document).height())-$(window).height()){
+			        document.getElementById("insertar").style.bottom="9em";
+			    }
+			    else
+			    {
+			    	document.getElementById("insertar").style.bottom="0em";
+			    }	
+			});
+
+		</script>
 	</body>
 </html>

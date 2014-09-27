@@ -1,5 +1,5 @@
 <?php
-	include ("../class/comentarios_class.php");
+	include ("../clases/comentarios_class.php");
 	$comment = new comentarios();
 	if(isset($_POST["post"])){
 		$content = $_POST["busca"];
