@@ -1,0 +1,118 @@
+body {
+	background: #ddd;
+	font-family: sans-serif;
+	font-size: 16px;
+}
+h2 {
+	background: rgb(255,255,255);
+    line-height: 3em;
+	margin-bottom: 0;
+	padding-bottom: 0.5em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);
+    text-align: center;
+    color: #666;
+    font: normal 26px/1 Verdana, Helvetica;
+
+}
+h3 {
+	display: inline-block;
+	line-height: 2em;
+	margin-left: 1em;
+	width: 5em;
+}
+.alias {
+	display: inline-block;
+}
+.avatar {
+	display:inline-block;
+	height: 4.5em;
+	width: 6.5em;
+}
+.icomment {
+	margin-left: 1em;
+	margin-top: 1em;
+	width: 32em;
+}
+.icomment, .comment, #busca, #comen {
+    background: #f1f1f1;
+    box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+    padding: 5px 0px 5px 10px;
+}
+.fecha {
+	display: inline-block;
+	text-align: right;
+	width:19em;
+}
+.logo {
+	display: inline-block;
+	width: 6.5em;
+}
+#busca, #lbusca {
+	margin-left: 1em;
+	margin-top: 0em;
+	margin-bottom: 0.75em;
+}
+#comen {
+	width:90%;
+}
+#comentar{        
+    background-color: #ff8000;    
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #dd4f24;
+    height: 35px;
+    margin-left: 26em;
+    padding: 0px;
+    width: 100px;
+    color: #ffffff;
+}
+#comentar:hover
+{       
+    background-color: #fddb6f;
+    background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -moz-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -ms-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -o-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: linear-gradient(top, #ffb94b, #fddb6f);
+}   
+#comentarios {
+	background: #eee;
+	bottom: 2.5em;
+	font-size: 13px;
+	height: 92em;
+	margin-left: 2.5em;
+	width: 35em;
+}
+#contenedor {
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(238,238,238,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(238,238,238,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+
+    border: 3px dashed #ccc;
+    border-radius: 3px;
+    border-width: 1px;
+    box-shadow: 0 0 0 10px #fff;
+
+    font-size: 13px;
+    left: 30%;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    position: relative;
+    width: 40em;
+}
+#insertar {
+	background: #ddd;
+	border-radius: 3px;
+	bottom:0;
+	margin-left: 2.5em;
+	position: fixed;
+	width:35em;
+}

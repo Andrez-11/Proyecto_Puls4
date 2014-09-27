@@ -1,0 +1,137 @@
+<!doctype HTML>
+<html>
+	<head>
+		<title>Puls4: Comunidad profesional de gente atractiva</title>
+		<meta charset="utf-8">
+		<script src="../js/jquery.js" charset="utf-8"></script>
+		<script src="../js/jquery-ui.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="../css/jquery-ui.css">
+		<link rel="stylesheet" href="../css/jquery-ui.theme.css">
+		<link rel="stylesheet" href="../css/jquery-ui.structure.css">
+		<link rel="stylesheet" href="../css/normalize.css">
+		<link rel="stylesheet" href="../css/puls4.css">
+		<link rel="stylesheet" href="../css/comentarios.css">
+	</head>
+
+	<body>
+
+		<header>
+			<a href="index.html">
+				<div class="logo">
+				<img src="../images/logo.png">
+				</div>
+			</a>
+			<div class="titulo">
+				<h1>Puls4: Comunidad de gente atractiva</h1>
+				<p>Stylus</p>
+			</div>
+			<div class="avatar">
+				<a class="publicar" href="crearpost.php">Publicar</a>
+	            <img src="../images/avatar.jpg">
+	            <a class="flechita" href="login.php"></a>
+			</div>
+		</header>
+
+		<nav>
+			<ul class="menu">
+				<li><a href="#">Python</a></li>
+				<li><a href="#">HTML5</a></li>
+				<li><a href="#">JavaScript</a></li>
+				<li><a href="#">Django</a></li>
+				<li><a href="#">CSS3</a></li>
+			</ul>
+
+		</nav>
+
+		<div id="contenedor">
+			<div id="comentarios">
+			</div>
+
+			<form id="insertar" action="" method="POST" accept-charset="utf-8">
+
+				<input type="hidden" name="post" id="post" value="1">
+				<input type="hidden" name="user" id="user" value="1">
+				<div id="agregar">
+					<textarea class="icomment" rows="2" cols="50" name="contenido" placeholder="Agrega tu Comentario"></textarea>
+					<input type="button" id="comentar" value="Comentar">
+				</div>
+		
+				<hr>
+				<label for="busca" id="lbusca">Buscar</label>
+				<input type="text" name="busca" id="busca" value="" placeholder="Texto a Buscar">
+			</form>
+
+		</div>
+
+		<footer>
+			<div>
+				<strong>Powered by Vinculacion ITD</strong>
+					<p class="powered">Diplomado de tecnologías web</p>
+			</div>
+		</footer>
+
+		<script>
+			function lista(){
+				$.post("buscar.php",$("#insertar").serialize(),function(resultado){
+					$("#comentarios").html(resultado);
+				});
+			}
+			lista();
+
+			$(document).on("click","#comentar",function(){
+				$.post("insertar.php",$("#insertar").serialize(),function(resultado){
+					alert(resultado);
+					lista();
+					$("#insertar textarea").val("");
+					$("#insertar textarea").focus();
+				});
+			});
+
+			$(document).on("keyup","#busca",function(){
+				$.post("buscar.php",$("#insertar").serialize(),function(resultado){
+					$("#comentarios").html(resultado);
+				});
+			});
+
+			$(document).on("click",".contenido",function(){
+				var idusr = $(this).attr("title");
+				var usr = $("#user").attr("value");
+
+				if (idusr==usr) {
+					var id = $(this).attr("id");
+					var txt = $(this).attr("value");
+					$(this).html("<input type='text' name='comen' id='comen' value='"+txt+"'/>");
+					$("#insertar").append("<input type='hidden' name='clave' id='clave' value='"+id+"'>");
+					$("#comen").focus();
+					
+					$("#comen").change(function(){
+						var nc = $("#comen").val();
+						$("#insertar").append("<input type='hidden' name='ncomen' id='ncomen' value='"+nc+"'>");
+						$.get("actualizar.php",$("#insertar").serialize(),function(resultado){
+							alert(resultado);
+							lista();
+						});
+					});
+					$("#comen").blur(function(){
+						lista();
+					});
+				}
+				else
+				{
+					alert("Este comentario no puedes modificarlo, ya que no eres el Propietario");
+				}
+			});
+
+			$(window).scroll(function(){
+			    if (($(window).scrollTop()+$("footer").height()+$(".comment").last().height()) >= ($(document).height())-$(window).height()){
+			        document.getElementById("insertar").style.bottom="9em";
+			    }
+			    else
+			    {
+			    	document.getElementById("insertar").style.bottom="0em";
+			    }	
+			});
+
+		</script>
+	</body>
+</html>
