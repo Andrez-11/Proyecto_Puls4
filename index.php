@@ -6,8 +6,6 @@
 		
 	</section>
 	<script>
-<<<<<<< HEAD
-=======
 		$.get("posts/listPosts.php", function(data){
 			var json = $.parseJSON(data);
 			for (var id in json) {
@@ -27,11 +25,7 @@
 
 	
 		});
->>>>>>> efd9c20dfd336b0685cdd1fc40ea10f688cd6d07
-
 //para BUSCAR FAV
-
-
 
 // para PONER FAV
 $(document).on("click",".nofavoritos",function()
@@ -60,11 +54,8 @@ $(document).on("click",".favoritos",function()
 					
 					});
 		});//para obtener id del post	
-	}); //cierra funcion.post
-
-	
+	}); //cierra funcion.post	
 	/*
-
 
 	$(document).on("click",".post", function(){
 		var id= $(this).attr("id");
@@ -95,23 +86,10 @@ $(document).on("click",".favoritos",function()
 */
 
 
-
-
-
 	</script>
 <?php 
 			include('footer.php');
 
 ?>
-<script>
-/*$(document).ready(function(){
-		$.post("favoritos/listar_favoritos.php","",function(resultado){  // ejecuta el archivo sin parametros y arroja codigo html
-		$(".posts").html(resultado);//almacenalo en la funcion para modificar su contenido html del objeto #listado
-	});
-
-
-});*/
-</script>
-
 
 <!--shift control arriba o abajo para mover el texto hacia arriba junto-->
