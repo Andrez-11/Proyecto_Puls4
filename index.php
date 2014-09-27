@@ -3,88 +3,31 @@
 
 ?>
 	<section class="posts">
-		<article class="post" id="1">
-			<div class="generales">
-				<div class="imagen">
-					<img src="images/imagen.jpg">
-				</div>
-
-				<div class="detalles">
-					<h2 class="titulo"><a href="#">Colores, gradientes y texto 3D con Sass y Compass</a></h2>
-					<p class="autor">por <a href="#">Diana Reyes</a></p>
-					<p class="tags">CSS3 <a href="#"></a></p>
-					<p class="fecha">hace <strong>20</strong> min </p>
-				</div>
-			</div>
-
-			<div class="acciones">
-				<div class="votos">
-					<a class="likes" href="#"></a>
-					<p>156</p>
-					<a class="nolikes" href="#"></a>
-					</div>
-				<div class="comenfavs">
-					<a class="comentarios" href="#">10</a>
-					<span class="nofavoritos" ></span> 
-					<!-- <input type="hidden" name="id_post" value="1"/>asdasd-->
-				</div>
-			</div>
-		 </article>
-		 <article class="post" id="2">
-			<div class="generales">
-				<div class="imagen">
-					<img src="images/imagen.jpg">
-				</div>
-
-				<div class="detalles">
-					<h2 class="titulo"><a href="#">Colores, gradientes y texto 3D con Sass y Compass</a></h2>
-					<p class="autor">por <a href="#">Diana Reyes</a></p>
-					<p class="tags">CSS3 <a href="#"></a></p>
-					<p class="fecha">hace <strong>20</strong> min </p>
-				</div>
-			</div>
-
-			<div class="acciones">
-				<div class="votos">
-					<a class="likes" href="#"></a>
-					<p>156</p>
-					<a class="nolikes" href="#"></a>
-					</div>
-				<div class="comenfavs">
-					<a class="comentarios" href="#">10</a>
-					<span class="nofavoritos" ></span> <!-- asdasd-->
-
-				</div>
-			</div>
-		 </article>
-		 <article class="post" id="3">
-			<div class="generales">
-				<div class="imagen">
-					<img src="images/imagen.jpg">
-				</div>
-
-				<div class="detalles">
-					<h2 class="titulo"><a href="#">Colores, gradientes y texto 3D con Sass y Compass</a></h2>
-					<p class="autor">por <a href="#">Diana Reyes</a></p>
-					<p class="tags">CSS3 <a href="#"></a></p>
-					<p class="fecha">hace <strong>20</strong> min </p>
-				</div>
-			</div>
-
-			<div class="acciones">
-				<div class="votos">
-					<a class="likes" href="#"></a>
-					<p>156</p>
-					<a class="nolikes" href="#"></a>
-					</div>
-				<div class="comenfavs">
-					<a class="comentarios" href="#">10</a>
-					<span class="nofavoritos" ></span> <!-- asdasd-->
-				</div>
-			</div>
-		 </article>
+		
 	</section>
 	<script>
+<<<<<<< HEAD
+		$.get("posts/listPosts.php", function(data){
+			var json = $.parseJSON(data);
+			for (var id in json) {
+			  if (json.hasOwnProperty(id)) {
+			    console.log(json[id]);
+			    $.post("posts/article.php",json[id],function(data){
+			    	$("section.posts").append(data);
+			    });
+			  }
+			}
+		});
+	</script>
+	<script>
+//para BUSCAR FAV
+/*$document.ready(function(){
+		$.post("listar_favoritos.php","",function(resultado){
+
+	
+		});
+=======
+>>>>>>> upstream/master
 
 //para BUSCAR FAV
 
