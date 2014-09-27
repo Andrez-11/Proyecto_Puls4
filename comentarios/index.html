@@ -1,0 +1,214 @@
+<!doctype HTML>
+<html>
+	<head>
+		<title>Puls4: Comunidad profesional de gente atractiva</title>
+		<meta charset="utf-8">
+		<script src="../js/jquery.js" charset="utf-8"></script>
+		<script src="../js/jquery-ui.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="../css/jquery-ui.css">
+		<link rel="stylesheet" href="../css/jquery-ui.theme.css">
+		<link rel="stylesheet" href="../css/jquery-ui.structure.css">
+		<link rel="stylesheet" href="../css/normalize.css">
+		<link rel="stylesheet" href="../css/puls4.css">
+		<!--<link rel="stylesheet" href="../css/estilos.css">
+			.comment {
+				display:block;
+			} -->
+		<style>
+			body {
+				background: #ddd;
+				font-family: arial,verdana;
+				font-size: 14px;
+			}
+			h2 {
+				background: #ddd;
+				text-align: center;
+			}
+			h3 {
+				display: inline-block;
+				line-height: 2em;
+				margin-left: 1em;
+				width: 5em;
+			}
+			.alias {
+				display: inline-block;
+			}
+			.avatar {
+				display:inline-block;
+				height: 4.5em;
+				width: 6.5em;
+			}
+			.comment {
+				border-radius: 2.5%;
+				border-style: dotted; 
+				border-width: 1px;				
+				margin-top: 0.1em;
+			}
+			.fecha {
+				display: inline-block;
+				text-align: right;
+				width:19em;
+			}
+			.logo {
+				display: inline-block;
+				width: 6.5em;
+			}
+			#comen {
+				width:90%;
+			}
+			#comentarios {
+				background: #eee;
+				bottom: 2.5em;
+				height: 92em;
+				margin-left: 2.5em;
+				top: 2.5em;
+				width: 35em;
+			}
+			#contenedor {
+			    background: rgb(255,255,255); /* Old browsers */
+			    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(238,238,238,1) 100%); /* FF3.6+ */
+			    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(238,238,238,1))); /* Chrome,Safari4+ */
+			    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* Chrome10+,Safari5.1+ */
+			    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* Opera 11.10+ */
+			    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* IE10+ */
+			    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* W3C */
+			    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+
+			    border-radius: 3px;
+			    border-width: 1px;
+			    left: 30%;
+			    padding-top: 1em; 
+			    position: relative;
+			    width: 40em;
+
+			    /*height: 92em;
+				margin-left: 30%;
+			    padding: 1em;
+			    position: relative;
+			    margin: 10px 0px 10px 350px;
+			    z-index: 0;   */
+
+			}
+			#insertar {
+				background: #ddd;
+				bottom: 7.5em;
+				margin-left: 2.5em;
+				position: fixed;
+				width:35em;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header>
+			<a href="index.html">
+				<div class="logo">
+				<img src="../images/logo.png">
+				</div>
+			</a>
+			<div class="titulo">
+				<h1>Puls4: Comunidad de gente atractiva</h1>
+				<p>Stylus</p>
+			</div>
+			<div class="avatar">
+				<a class="publicar" href="crearpost.php">Publicar</a>
+	            <img src="../images/avatar.jpg">
+	            <a class="flechita" href="login.php"></a>
+			</div>
+		</header>
+
+		<nav>
+			<ul class="menu">
+				<li><a href="#">Python</a></li>
+				<li><a href="#">HTML5</a></li>
+				<li><a href="#">JavaScript</a></li>
+				<li><a href="#">Django</a></li>
+				<li><a href="#">CSS3</a></li>
+			</ul>
+
+		</nav>
+
+		<div id="contenedor">
+			<div id="comentarios">
+			</div>
+
+			<form id="insertar" action="" method="POST" accept-charset="utf-8">
+
+				<input type="hidden" name="post" id="post" value="1">
+				<input type="hidden" name="user" id="user" value="1">
+				<div id="agregar">
+					<textarea class="comment" rows="2" cols="50" name="contenido" placeholder="Agrega tu Comentario"></textarea>
+					<input type="button" id="comentar" value="Comentar">
+				</div>
+		
+				<hr>
+				<label for="busca">Buscar</label>
+				<input type="text" name="busca" id="busca" value="" placeholder="Texto a Buscar">
+				<hr>
+			</form>
+
+		</div>
+
+		<footer>
+			<div>
+				<strong>Powered by Vinculacion ITD</strong>
+					<p class="powered">Diplomado de tecnologías web</p>
+			</div>
+		</footer>
+
+		<script>
+			function lista(){
+				$.post("buscar.php",$("#insertar").serialize(),function(resultado){
+					$("#comentarios").html(resultado);
+				});
+			}
+			lista();
+
+			$(document).on("click","#comentar",function(){
+				$.post("insertar.php",$("#insertar").serialize(),function(resultado){
+					alert(resultado);
+					lista();
+					$("#insertar textarea").val("");
+					$("#insertar textarea").focus();
+				});
+			});
+
+			$(document).on("keyup","#busca",function(){
+				$.post("buscar.php",$("#insertar").serialize(),function(resultado){
+					$("#comentarios").html(resultado);
+				});
+			});
+
+			$(document).on("click",".contenido",function(){
+				var idusr = $(this).attr("title");
+				var usr = $("#user").attr("value");
+
+				if (idusr==usr) {
+					var id = $(this).attr("id");
+					var txt = $(this).attr("value");
+					$(this).html("<input type='text' name='comen' id='comen' value='"+txt+"'/>");
+					$("#insertar").append("<input type='hidden' name='clave' id='clave' value='"+id+"'>");
+					$("#comen").focus();
+					
+					$("#comen").change(function(){
+						var nc = $("#comen").val();
+						$("#insertar").append("<input type='hidden' name='ncomen' id='ncomen' value='"+nc+"'>");
+						$.get("actualizar.php",$("#insertar").serialize(),function(resultado){
+							alert(resultado);
+							lista();
+						});
+					});
+					$("#comen").blur(function(){
+						lista();
+					});
+				}
+				else
+				{
+					alert("Este comentario no puedes modificarlo, ya que no eres el Propietario");
+				}
+			});
+		</script>
+
+	</body>
+</html>
