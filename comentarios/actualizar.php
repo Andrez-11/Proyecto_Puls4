@@ -1,5 +1,5 @@
 <?php
-	include("../class/comentarios_class.php");
+	include("../clases/comentarios_class.php");
 	
 	if (isset($_GET["clave"])){
 		$comment = new comentarios();
