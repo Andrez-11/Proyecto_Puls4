@@ -9,9 +9,23 @@ class favoritos{
 	}
 
 	function insertar_favoritos($user,$post){
-		$sql_insert = "insert into favoritos(id_user,id_post,favorito) values($user,$post,1)";
-		mysqli_query($this->link,$sql_insert) or die ("Error en la Insercion de Favoritos");
-		return "favoritos";
+		$sql_select= "select favorito from favoritos where id_user ='$user'and id_post='$post'";
+		$que=mysqli_query($this->link,$sql_select) or die ("Consulta Incorrecta");
+		$num_col=mysqli_num_rows($que);
+		if($num_col>0)
+		{
+			$sql_select2= "update favoritos set favorito=1 where id_user ='$user'and id_post='$post'";
+			mysqli_query($this->link,$sql_select2) or die ("Consulta Incorrecta");
+			return "favoritos";
+
+		}
+		else
+		{
+			$sql_insert = "insert into favoritos(id_user,id_post,favorito) values($user,$post,1)";
+			mysqli_query($this->link,$sql_insert) or die ("Error en la Insercion de Favoritos");
+			return "favoritos";
+		}
+		
 
 	}
 	function modificar_favoritos($user,$post){
