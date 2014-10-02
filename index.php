@@ -6,8 +6,6 @@
 		
 	</section>
 	<script>
-<<<<<<< HEAD
-=======
 		$.get("posts/listPosts.php", function(data){
 			var json = $.parseJSON(data);
 			for (var id in json) {
@@ -27,7 +25,12 @@
 
 	
 		});
+<<<<<<< HEAD
 >>>>>>> efd9c20dfd336b0685cdd1fc40ea10f688cd6d07
+=======
+=======
+>>>>>>> upstream/master
+>>>>>>> FETCH_HEAD
 
 //para BUSCAR FAV
 
