@@ -20,7 +20,7 @@
 			<p class="autor">por <a href="#"><?= $author ?></a></p>
 			<?php 
 				foreach ($tags as $tag) {
-					echo "<p class='tags'>$tag <a href='#'></a></p>";
+					echo "<p class='tags'>$tag <a href=''></a></p>";
 				}
 			?>
 			<p class="fecha">hace <strong><?= $timesince ?></strong> min </p>
@@ -34,8 +34,9 @@
 			<a class="nolikes" href="#"></a>
 			</div>
 		<div class="comenfavs">
-			<a class="comentarios" href="#"><?= $nocomens ?></a>
+			<a class="comentarios" href="#" id="<?= $id ?>"><?= $nocomens ?></a>
 			<span class="nofavoritos" ></span> 
 		</div>
 	</div>
  </article>
+ <script type></script>

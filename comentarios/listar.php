@@ -6,6 +6,6 @@
 		echo $comment -> listar($post);
 	}
 	else {
-		echo "Error en los Parámetros";
+		echo "Error en los Parámetros List";
 	}
 ?>

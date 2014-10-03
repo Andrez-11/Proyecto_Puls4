@@ -66,10 +66,10 @@ header .avatar .publicar{
 	color: #ffffff;
 	height: 30px;
 	position: absolute;
-	right: 80px;
+	right: 72px;
 	text-align: center;
 	text-decoration: none;
-	top: 30px;
+	top: 10px;
 	width: 80px;
 }
 header .avatar .publicar:before{

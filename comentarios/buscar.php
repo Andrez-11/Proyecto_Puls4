@@ -7,6 +7,6 @@
 		echo $comment -> buscar("contenido_comen like '%$content%'",$post);
 	}
 	else {
-		echo "Error en los Parámetros";
+		echo "Error en los Parámetros BUSC";
 	}
 ?>

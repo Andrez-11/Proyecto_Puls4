@@ -8,6 +8,6 @@
 		echo $comment -> actualizar($id,$cont);
 	}
 	else {
-		echo "Error en los Parámetros";
+		echo "Error en los Parámetros ACT";
 	}
 ?>

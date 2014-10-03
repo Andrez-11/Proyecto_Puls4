@@ -1,25 +1,7 @@
-<html>
-	<head>
-		<title>Puls4: Comunidad profesional de gente atractiva</title>
-		<meta charset="utf-8">
-		<script src="../js/jquery.js" charset="utf-8"></script>
-		<script src="../js/jquery-ui.js" charset="utf-8"></script>
-		<link rel="stylesheet" href="../css/jquery-ui.css">
-		<link rel="stylesheet" href="../css/jquery-ui.theme.css">
-		<link rel="stylesheet" href="../css/jquery-ui.structure.css">
-		<link rel="stylesheet" href="../css/normalize.css">
-		<link rel="stylesheet" href="../css/puls4.css">
-		<link rel="stylesheet" href="../css/comentarios.css">
-	</head>
-
-	<body>
-
-		<?php
+<?php
 			include("../header.php");
-			session_start();
-			$id=$_SESSION["user"];
-			echo "<input type='hidden' name='user' id='user' value='".$id."'>";
-			echo "<input type='hidden' name='post' id='post' value='".$_POST["id"]."'>";
+			echo "<input type='hidden' name='user' id='user' value='".$_SESSION["id_user"]."'>";
+			echo "<input type='hidden' name='post' id='post' value='".$_GET["id_post"]."'>";
 		?>
 
 		<div id="contenedor">
@@ -44,14 +26,14 @@
 
 		<script>
 			function lista(){
-				$.post("buscar.php",$("#insertar").serialize(),function(resultado){
+				$.post("comentarios/buscar.php",$("#insertar").serialize(),function(resultado){
 					$("#comentarios").html(resultado);
 				});
 			}
 			lista();
 
 			$(document).on("click","#comentar",function(){
-				$.post("insertar.php",$("#insertar").serialize(),function(resultado){
+				$.post("comentarios/insertar.php",$("#insertar").serialize(),function(resultado){
 					alert(resultado);
 					lista();
 					$("#insertar textarea").val("");
@@ -60,7 +42,7 @@
 			});
 
 			$(document).on("keyup","#busca",function(){
-				$.post("buscar.php",$("#insertar").serialize(),function(resultado){
+				$.post("comentarios/buscar.php",$("#insertar").serialize(),function(resultado){
 					$("#comentarios").html(resultado);
 				});
 			});

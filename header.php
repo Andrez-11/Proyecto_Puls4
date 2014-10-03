@@ -1,7 +1,6 @@
 <?php
 		session_start(); //comienza la sesion
 		$_SESSION["id_user"]= 1;
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,13 +11,20 @@
 	-->
 	<meta charset="utf-8"/>
 	<title>Puls4: Comunidad profesional de gente atractiva</title>
+	<base href="http://localhost/Proyecto_Puls4/"></base>
+	
 	<script src="js/jquery.min.js" charset="utf-8"></script>
 	<script src="js/jquery-ui.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/recuperar.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/puls4.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.min.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css">
+	<link rel="stylesheet" type="text/css" href="css/comentarios.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/registro_user.css">
+	
 </head>
 <body>
 	<header>
@@ -34,7 +40,7 @@
 		<div class="avatar">
 			<a class="publicar" href="crearpost.php">Publicar</a>
             <img src="images/avatar.jpg">
-            <a class="flechita" href="login.php"></a>
+            <a class="flechita" href="usuarios/login.php"></a>
 		</div>
 	</header>
 	<nav>
