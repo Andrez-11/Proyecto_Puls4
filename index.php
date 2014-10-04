@@ -17,6 +17,7 @@
 			  }
 			}
 		});
+<<<<<<< Updated upstream
 	</script>
 	<script>
 //para BUSCAR FAV
@@ -32,6 +33,34 @@
 
 
 
+=======
+			/* para clasificar por tema los post 
+			$(document).on("click",".menu a",function(){
+		var tema= $(this).attr("id");
+		$.post("posts/listPostTemas.php","tema="+tema, function(data){
+			var json = $.parseJSON(data);
+			for (var id in json) {
+			  if (json.hasOwnProperty(id)) {
+			    console.log(json[id]);
+			    $.post("posts/article.php",json[id],function(data){
+			    	$("section.posts").append(data);
+			    });
+			  }
+			}
+			});
+		});*/
+		
+			//Para ver los comentarios de cada post
+		$(document).on("click",".comentarios",function(){
+			var id_post= $(this).attr("id");
+			$(location).attr('href', "comentarios/comentarios.php?id_post="+id_post);		
+			});
+
+		//para BUSCAR FAV
+
+
+/*
+>>>>>>> Stashed changes
 // para PONER FAV
 $(document).on("click",".nofavoritos",function()
 		{
@@ -91,6 +120,7 @@ $(document).on("click",".favoritos",function()
 			
 		}); //cierra otra funcion?
 
+<<<<<<< Updated upstream
 */
 
 
@@ -114,3 +144,15 @@ $(document).on("click",".favoritos",function()
 
 
 <!--shift control arriba o abajo para mover el texto hacia arriba junto-->
+=======
+
+*/
+
+
+	</script>
+
+<?php 
+			include('footer.php');
+
+?>
+>>>>>>> Stashed changes

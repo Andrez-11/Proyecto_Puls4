@@ -53,7 +53,7 @@
 						break;
 				}
 				$salida.="<div class='comment'>"
-							."<div class='logo'><img class='avatar' src='../images/".$reg["avatar"]."'></div>"
+							."<div class='logo'><img class='avatar' src='images/".$reg["avatar"]."'></div>"
 							."<div class='alias'><span class='ch3'>".$reg["alias_usuario"]."</span></div>"
 							."<div class='fecha'>".$pon."</div>"
 							."<div class='contenido' id='".$reg["id_comen"]."' value='".$reg["contenido_comen"]."' title='".$reg["id_user"]."'>"

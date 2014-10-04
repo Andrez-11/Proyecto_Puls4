@@ -1,7 +1,5 @@
 <?php
 			include("../header.php");
-			echo "<input type='hidden' name='user' id='user' value='".$_SESSION["id_user"]."'>";
-			echo "<input type='hidden' name='post' id='post' value='".$_GET["id_post"]."'>";
 		?>
 
 		<div id="contenedor">
@@ -9,6 +7,10 @@
 			</div>
 
 			<form id="insertar" action="" method="POST" accept-charset="utf-8">
+				<?php
+					echo "<input type='hidden' name='user' id='user' value='".$_SESSION["id_user"]."'>";
+					echo "<input type='hidden' name='post' id='post' value='".$_GET["id_post"]."'>";
+				?>
 				<div id="agregar">
 					<textarea class="icomment" rows="2" cols="50" name="contenido" placeholder="Agrega tu Comentario"></textarea>
 					<input type="button" id="comentar" value="Comentar">
@@ -61,7 +63,7 @@
 					$("#comen").change(function(){
 						var nc = $("#comen").val();
 						$("#insertar").append("<input type='hidden' name='ncomen' id='ncomen' value='"+nc+"'>");
-						$.get("actualizar.php",$("#insertar").serialize(),function(resultado){
+						$.get("comentarios/actualizar.php",$("#insertar").serialize(),function(resultado){
 							alert(resultado);
 							lista();
 						});

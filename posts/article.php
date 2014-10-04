@@ -23,6 +23,7 @@
 					echo "<p class='tags'>$tag <a href=''></a></p>";
 				}
 			?>
+			
 			<p class="fecha">hace <strong><?= $timesince ?></strong> min </p>
 		</div>
 	</div>

@@ -1,6 +1,11 @@
 <?php
+<<<<<<< Updated upstream:usuarios/insertar_usuario.php
 	include __DIR__ . "/../clases/usuarios.class.php";
 	include __DIR__ . "/../clases/validador.php";
+=======
+	include  "../clases/usuarios.class.php";
+	include  "../clases/validador.php";
+>>>>>>> Stashed changes:usuarios/insertar.php
 	
 	if(isset($_POST["user"])){
 

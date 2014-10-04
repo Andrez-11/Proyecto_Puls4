@@ -98,11 +98,11 @@
 	</header>
 	<nav>
 		<ul class="menu">
-			<li><a href="#">Python</a></li>
-			<li><a href="#">HTML5</a></li>
-			<li><a href="#">JavaScript</a></li>
-			<li><a href="#">Django</a></li>
-			<li><a href="#">CSS3</a></li>
+			<li><a id="1"href="#">CSS3</a></li>
+			<li><a id="2"href="#">HTML5</a></li>
+			<li><a id="3"href="#">Python</a></li>
+			<li><a id="4"href="#">JavaScript</a></li>
+			<li><a id="5"href="#">Django</a></li>
 		</ul>
 
 	</nav>

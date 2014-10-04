@@ -10,8 +10,8 @@
    
        <div id="ayuda">
         <input type="button" id="btn-recuperar" value="Enviar correo" />
-            <a href="registro_usuario.php">Registrarse</a>
-            <a href="login.php">Login</a>
+            <a href="usuarios/registro_usuario.php">Registrarse</a>
+            <a href="usuarios/login.php">Login</a>
          </div>
 </form>
     </div>

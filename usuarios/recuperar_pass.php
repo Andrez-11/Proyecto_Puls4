@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< Updated upstream
 	include "../clases/usuarios.class.php";
+=======
+	include  "../clases/usuarios.class.php";
+>>>>>>> Stashed changes
 
 	$token = isset($_GET["token"]) ? $_GET["token"] : null;
 	$pass = isset($_POST["pass"]) ? $_POST["pass"] : null;
