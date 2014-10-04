@@ -1,6 +1,6 @@
 <?php
 
-	include __DIR__ . "/clases/usuarios.class.php";
+	include "../clases/usuarios.class.php";
 
 	$token = isset($_GET["token"]) ? $_GET["token"] : null;
 	$pass = isset($_POST["pass"]) ? $_POST["pass"] : null;

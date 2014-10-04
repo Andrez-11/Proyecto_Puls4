@@ -38,7 +38,7 @@ header .avatar{
 header .avatar img{
 	border-radius: 50%;/*borde rendondeado*/
 	margin-right: 20px;
-	width: 50px;
+	width: 80px;
 }
 
 header .avatar .flechita{
@@ -60,13 +60,19 @@ header .avatar .flechita:before{ /*antes del contenido se pone AFTER despues del
 
 }
 
+#nombre
+{
+	position: absolute;
+	right: 140px;
+}
+
 header .avatar .publicar{
 	background: #dd4f24;
 	display: inline-block;
 	color: #ffffff;
 	height: 30px;
 	position: absolute;
-	right: 80px;
+	right: 120px;
 	text-align: center;
 	text-decoration: none;
 	top: 30px;
@@ -76,6 +82,19 @@ header .avatar .publicar:before{
 	content: "\e601";
 	font-family: "iconitos";
 
+}
+
+.salir{
+	background: #dd4f24;
+	display: inline-block;
+	color: #ffffff;
+	height: 30px;
+	position: absolute;
+	right: 220px;
+	text-align: center;
+	text-decoration: none;
+	top: 30px;
+	width: 80px;
 }
 
 header .logo{

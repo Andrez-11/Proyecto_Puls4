@@ -15,7 +15,7 @@ $(document).ready(function()
 		}
 		else
 		{
-			$.post("login1.php",
+			$.post("usuarios/autenticar.php",
 			{
 				usuario: usuario,
 				password: password

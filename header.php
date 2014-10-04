@@ -1,6 +1,20 @@
-<?php
-		session_start(); //comienza la sesion
-		$_SESSION["id_user"]= 1;
+<?php session_start(); //comienza la sesion
+		//$_SESSION["id_user"]= 1;
+
+	$sesion = isset($_SESSION["puls4"]) ? $_SESSION["puls4"] : false;
+	$dominio = $_SERVER["SERVER_NAME"] . "/php/Proyecto_Puls4";
+
+	if ($sesion)
+	{
+		include "clases/usuarios.class.php";
+		$usr = new usuarios();
+		$datos = $usr->persona($sesion);
+
+		$nombre = $datos["nombre"];
+		$alias_usuario = $datos["alias_usuario"];
+		$email = $datos["email"];
+		$avatar = "//" . $dominio . "/images/" . $datos["avatar"];
+	} 
 
 ?>
 <!DOCTYPE html>
@@ -12,30 +26,47 @@
 	-->
 	<meta charset="utf-8"/>
 	<title>Puls4: Comunidad profesional de gente atractiva</title>
-	<script src="js/jquery.min.js" charset="utf-8"></script>
-	<script src="js/jquery-ui.min.js" charset="utf-8"></script>
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/puls4.css">
-	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
-	<link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.min.css">
-	<link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css">
+	<script src="//<?= @$dominio; ?>/js/jquery.min.js" charset="utf-8"></script>
+	<script src="//<?= @$dominio; ?>/js/jquery-ui.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="//<?= @$dominio; ?>/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="//<?= @$dominio; ?>/css/puls4.css">
+	<link rel="stylesheet" type="text/css" href="//<?= @$dominio; ?>/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="//<?= @$dominio; ?>/css/jquery-ui.theme.min.css">
+	<link rel="stylesheet" type="text/css" href="//<?= @$dominio; ?>/css/jquery-ui.structure.min.css">
 </head>
 <body>
 	<header>
-		<a href="index.php">
+		<a href="//<?= @$dominio; ?>/index.php">
 			<div class="logo">
-			<img src="images/logo.png">
+			<img src="//<?= @$dominio; ?>/images/logo.png">
 			</div>
 		</a>
 		<div class="titulo">
 			<h1>Puls4: Comunidad de gente atractiva</h1>
 			<p>Stylus</p>
 		</div>
+		<?php
+			if (isset($_SESSION["puls4"]))
+			{
+		?>
 		<div class="avatar">
+			<a class="salir" href="//<?= @$dominio; ?>/usuarios/salir.php">Salir</a>
 			<a class="publicar" href="crearpost.php">Publicar</a>
-            <img src="images/avatar.jpg">
-            <a class="flechita" href="login.php"></a>
+			<span id="nombre"><?= $nombre; ?></span>
+            <img src="<?= @$avatar; ?>">
+            <a class="flechita" href="usuarios/perfil.php" title="Ir a mi perfil"></a>
 		</div>
+		<?php
+			}
+			else
+			{
+		?>
+		<div class="avatar">
+			<a class="publicar" href="login.php">Login</a>
+		</div>
+		<?php
+			}
+		?>
 	</header>
 	<nav>
 		<ul class="menu">

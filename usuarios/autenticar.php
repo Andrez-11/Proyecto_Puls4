@@ -1,6 +1,6 @@
 <?php session_start(); // hacer uso de las sessiones
 
-	include __DIR__ . "/clases/usuarios.class.php";
+	include "../clases/usuarios.class.php";
 
 	if (isset($_POST["usuario"]))
 	{
@@ -32,10 +32,10 @@
 			else if ($pass == $campo["contrasena"])
 			{
 				// crea la session con el valor del nombre del usuario de la bdd
-				$_SESSION["puls4"] = $campo["nombre"];
+				$_SESSION["puls4"] = $campo["id_user"];
 				echo 1;
 			}
-			// no coincide el pass con el resitro de la bdd
+			// no coincide el pass con el registro de la bdd
 			else
 			{
 				echo "la contraseña es incorrecta";

@@ -1,6 +1,6 @@
 <?php
-	include __DIR__ . "/clases/usuarios.class.php";
-	include __DIR__ . "/clases/validador.php";
+	include __DIR__ . "/../clases/usuarios.class.php";
+	include __DIR__ . "/../clases/validador.php";
 	
 	if(isset($_POST["user"])){
 
@@ -74,7 +74,7 @@
 
 				$ruta = "{$id}.{$extension}";
 
-				$copiar_en_carpeta = copy($archivo["tmp_name"], "avatares/" . $ruta);
+				$copiar_en_carpeta = copy($archivo["tmp_name"], "images/" . $ruta);
 
 				if($copiar_en_carpeta)
 				{

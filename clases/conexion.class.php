@@ -2,7 +2,12 @@
 class conexion{
 	//creamos una funcion (metodo) que se llama igual a la clase
 	//para definir el comportamiento del objeto en su inicializacion
-	function conexion($host='phpmyadmin.itdurango.mx',$user='artet0_diplomado',$password='d1pl0m4d0', $database='artet0_diplomado'){ //metodo constructor nombre igual a la clase
+	private $host;
+	private $user;
+	private $password;
+	private $database;
+
+	function conexion($host='localhost',$user='root',$password='root', $database='artet0_diplomado'){ //metodo constructor nombre igual a la clase
 		$this->host = $host;
 		$this->user = $user;
 		$this->password = $password;
@@ -23,5 +28,4 @@ class conexion{
 	}
 
 }
-
 ?>

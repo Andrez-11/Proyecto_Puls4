@@ -44,7 +44,7 @@
             <form id="post" method="POST" action="" enctype="multipart/form-data">
                 <!--<form id ="frminsertar" action ="" method="post">-->
                 <span class="tituloh1">REGISTRAR USUARIO</span>
-                <?php include __DIR__ . "/insertar.php"; ?>
+                <?php include __DIR__ . "/usuarios/insertar_usuario.php"; ?>
                 <div id="inputs">
                     <label for="user">Nombre del Usuario:</label>
                     <input id="user" name="user" type="text" value="<?= @$user; ?>"  > 
