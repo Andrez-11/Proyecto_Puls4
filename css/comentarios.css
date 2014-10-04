@@ -84,6 +84,7 @@
 	font-size: 13px;
 	height: 92em;
 	margin-left: 2.5em;
+    overflow: scroll;
 	width: 35em;
 }
 #contenedor {
