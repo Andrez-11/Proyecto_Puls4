@@ -7,6 +7,6 @@
 		echo $comment -> insertar($_POST["contenido"],$user,$post);
 	}
 	else {
-		echo "Error en los Parámetros";
+		echo "Error en los Parámetros Ins";
 	}
 ?>

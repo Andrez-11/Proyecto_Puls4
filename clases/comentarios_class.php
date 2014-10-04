@@ -25,7 +25,7 @@
 			$queryx=mysqli_query($this->link,$sqlx) or die ("Error en Consulta: ".mysqli_error($this->link));
 			$regx=mysqli_fetch_assoc($queryx);
 
-			$salida="<h2>".$regx["titulo"]."</h2>";
+			$salida="<span class='ch2'>".$regx["titulo"]."</span>";
 			while($reg=mysqli_fetch_assoc($query)){
 				//$dt=time()-strtotime($reg["fecha_comen"]);
 				$dt=$reg["time_comen"];
@@ -54,7 +54,7 @@
 				}
 				$salida.="<div class='comment'>"
 							."<div class='logo'><img class='avatar' src='../images/".$reg["avatar"]."'></div>"
-							."<div class='alias'><h3>".$reg["alias_usuario"]."</h3></div>"
+							."<div class='alias'><span class='ch3'>".$reg["alias_usuario"]."</span></div>"
 							."<div class='fecha'>".$pon."</div>"
 							."<div class='contenido' id='".$reg["id_comen"]."' value='".$reg["contenido_comen"]."' title='".$reg["id_user"]."'>"
 								.$reg["contenido_comen"]."</div></div>";

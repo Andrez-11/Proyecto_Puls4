@@ -72,10 +72,14 @@ header .avatar .publicar{
 	color: #ffffff;
 	height: 30px;
 	position: absolute;
+<<<<<<< HEAD
 	right: 120px;
+=======
+	right: 72px;
+>>>>>>> 38d36e98a5ee0b739f6df007fab5e2be5e0f98dc
 	text-align: center;
 	text-decoration: none;
-	top: 30px;
+	top: 10px;
 	width: 80px;
 }
 header .avatar .publicar:before{

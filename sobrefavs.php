@@ -1,23 +1,3 @@
-<?php
-		include('header.php');
-
-?>
-	<section class="posts">
-		
-	</section>
-	<script>
-		$.get("posts/listPosts.php", function(data){
-			var json = $.parseJSON(data);
-			for (var id in json) {
-			  if (json.hasOwnProperty(id)) {
-			    console.log(json[id]);
-			    $.post("posts/article.php",json[id],function(data){
-			    	$("section.posts").append(data);
-			    });
-			  }
-			}
-		});
-	</script>
 	<script>
 //para BUSCAR FAV
 /*$document.ready(function(){
@@ -25,8 +5,6 @@
 
 	
 		});
-=======
->>>>>>> upstream/master
 
 //para BUSCAR FAV
 
@@ -98,10 +76,6 @@ $(document).on("click",".favoritos",function()
 
 
 	</script>
-<?php 
-			include('footer.php');
-
-?>
 <script>
 /*$(document).ready(function(){
 		$.post("favoritos/listar_favoritos.php","",function(resultado){  // ejecuta el archivo sin parametros y arroja codigo html
@@ -111,6 +85,3 @@ $(document).on("click",".favoritos",function()
 
 });*/
 </script>
-
-
-<!--shift control arriba o abajo para mover el texto hacia arriba junto-->
