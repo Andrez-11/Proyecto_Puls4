@@ -20,3 +20,9 @@
 
 
 - Ejecutar `grunt` para ejecutar todo lo que indica el archivo Gruntfile.js
+
+
+## Descargar los siguientes archivos:
+- Backbone.js [["Descargar"](http://backbonejs.org/)]
+- Underscore.js [[Descargar](http://underscorejs.org/)]
+- Handlebars.js [[Descargar](http://handlebarsjs.com/)]
