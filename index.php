@@ -17,7 +17,6 @@
 			  }
 			}
 		});
-<<<<<<< Updated upstream
 	</script>
 	<script>
 //para BUSCAR FAV
@@ -26,14 +25,12 @@
 
 	
 		});
-=======
->>>>>>> upstream/master
+
 
 //para BUSCAR FAV
 
 
 
-=======
 			/* para clasificar por tema los post 
 			$(document).on("click",".menu a",function(){
 		var tema= $(this).attr("id");
@@ -60,7 +57,7 @@
 
 
 /*
->>>>>>> Stashed changes
+
 // para PONER FAV
 $(document).on("click",".nofavoritos",function()
 		{
@@ -120,7 +117,6 @@ $(document).on("click",".favoritos",function()
 			
 		}); //cierra otra funcion?
 
-<<<<<<< Updated upstream
 */
 
 
@@ -132,27 +128,3 @@ $(document).on("click",".favoritos",function()
 			include('footer.php');
 
 ?>
-<script>
-/*$(document).ready(function(){
-		$.post("favoritos/listar_favoritos.php","",function(resultado){  // ejecuta el archivo sin parametros y arroja codigo html
-		$(".posts").html(resultado);//almacenalo en la funcion para modificar su contenido html del objeto #listado
-	});
-
-
-});*/
-</script>
-
-
-<!--shift control arriba o abajo para mover el texto hacia arriba junto-->
-=======
-
-*/
-
-
-	</script>
-
-<?php 
-			include('footer.php');
-
-?>
->>>>>>> Stashed changes

@@ -1,371 +1,52 @@
-/*se pone al inicio*/
-@font-face {
-	font-family: 'iconitos';
-	src:url('fonts/icomoon.eot?-aiemkz');
-	src:url('fonts/icomoon.eot?#iefix-aiemkz') format('embedded-opentype'),
-		url('fonts/icomoon.woff?-aiemkz') format('woff'),
-		url('fonts/icomoon.ttf?-aiemkz') format('truetype'),
-		url('fonts/icomoon.svg?-aiemkz#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
+@font-face{font-family:'iconitos';src:url("fonts/icomoon.eot?-aiemkz");src:url("fonts/icomoon.eot?#iefix-aiemkz") format('embedded-opentype'),url("fonts/icomoon.woff?-aiemkz") format('woff'),url("fonts/icomoon.ttf?-aiemkz") format('truetype'),url("fonts/icomoon.svg?-aiemkz#icomoon") format('svg');font-weight:normal;font-style:normal}
+aside{background:#444;display:none}
+body{background:#e8e8e8;color:#444;font-size:16px}
+header{background:#444;box-shadow:5px 5px 5px box_shadow .2;color:#fff;position:relative;z-index:10;}
+header .avatar{position:absolute;right:15px;top:15px;}
+header .avatar img{border-radius:50%;margin-right:20px;width:80px}
+header .avatar .flechita{background:#dd4f24;display:inline-block;color:#fff;height:25px;position:absolute;right:0;text-align:center;text-decoration:none;text-shadow:2px 2px 1px #000;top:10px;width:20px}
+header .avatar .flechita:before{content:"\e605";font-family:"iconitos"}
+header .avatar .publicar{background:#dd4f24;display:inline-block;color:#fff;height:30px;position:absolute;right:120px;text-align:center;text-decoration:none;top:10px;width:80px}
+header .avatar #nombre{position:absolute;right:140px}
+header .avatar .publicar:before{content:"\e601";font-family:"iconitos"}
+header .avatar .salir{background:#dd4f24;display:inline-block;color:#fff;height:30px;position:absolute;right:220px;text-align:center;text-decoration:none;top:30px;width:80px}
+header .logo{border-right:1px solid #22bce0;float:left;margin-left:15px;padding-right:10px;width:80px;}
+header .logo img{width:80px}
+header .titulo{display:inline-block;margin-left:15px;}
+header .titulo h1{font-family:Arial;font-size:18px;font-weight:normal}
+header .titulo p{color:#22bce0;font-size:14px;font-style:italic;font-weight:bold}
+footer{background:#dd4f24;color:rgba(255,255,255,0.7);height:6em;padding-top:3em;text-align:center;font-size:.8em}
+nav{background:#22bce0;border-left:10px solid #fff;}
+nav .menu{height:50px;line-height:50px;margin:0;margin-left:10px;padding:0;overflow-x:auto;white-space:nowrap;}
+nav .menu li{display:inline-block;}
+nav .menu li a{color:#fff;display:block;margin:0 .5em;padding:0 .2em;text-decoration:none}
+nav .menu li a:hover{background:box_shadow .2}
+nav .menu:before{border-bottom:25px solid transparent;border-left:10px solid #fff;border-top:25px solid transparent;content:"";left:10px;position:absolute}
+nav .menu::-webkit-scrollbar{display:none}
+.posts{padding:.5em;}
+.posts .post{background:#fff;border-radius:0 0 .5em .5em;box-shadow:3px 3px 5px box_shadow .5;margin-bottom:.5em;}
+.posts .post .acciones{border-top:3px solid #22bce0;height:2.5em;}
+.posts .post .acciones .comenfavs{float:right;line-height:3em;margin-right:.5em;}
+.posts .post .acciones .comenfavs .comentarios{background:#444;border-radius:3px;color:#fff;text-decoration:none}
+.posts .post .acciones .comenfavs .favoritos{color:#fcb92d;text-decoration:none}
+.posts .post .acciones .comenfavs .favoritos:before{font-family:"iconitos";content:"\e602";cursor:pointer}
+.posts .post .acciones .comenfavs .nofavoritos{color:#fcb92d;text-decoration:none}
+.posts .post .acciones .comenfavs .nofavoritos:before{font-family:"iconitos";content:"\e600";cursor:pointer}
+.posts .post .acciones .votos{float:left;margin-left:.5em;}
+.posts .post .acciones .votos p{display:inline-block}
+.posts .post .acciones .likes,.posts .post .acciones .nolikes{font-family:"iconitos";text-decoration:none}
+.posts .post .acciones .likes{color:#008000;content:"\e603"}
+.posts .post .acciones .likes:before{content:"\e603"}
+.posts .post .acciones .nolikes{color:#f00}
+.posts .post .acciones .nolikes:before{content:"\e604"}
+.posts .post .detalles{height:128px;margin-left:6.25em;}
+.posts .post .detalles .autor{margin:0;}
+.posts .post .detalles .autor a{color:#dd4f24}
+.posts .post .detalles .fecha{float:right;margin-right:1em}
+.posts .post .detalles .tags{background:#22bce0;border-radius:.5em;color:#fff;display:inline-block;margin-top:1em;padding:.2em .5em}
+.posts .post .detalles .titulo{font-size:.9em;font-style:italic;margin-bottom:.5em;}
+.posts .post .detalles .titulo a{color:#444;text-decoration:none}
+.posts .post .generales .imagen float left img{width:95px}
+@media screen and (max-width: 500px){header .titulo{height:80px}
+header .titulo h1{display:none}
 }
-
-
-aside {
-		background: #444444;
-		display: none;
-	}
-
-body{
-	background: #e8e8e8;
-	color: #444;
-	font-size: 16px;
-}
-header{
-	background: #444;
-	box-shadow: 5px 5px 5px rgba(0,0,0,0.2);/*el 0.2 es la transparencia de 0 a 1 */
-	color:white;
-	position: relative;
-	z-index: 10;
-}
-
-header .avatar{
-	position: absolute;
-	right: 15px;
-	top:15px;
-}
-
-header .avatar img{
-	border-radius: 50%;/*borde rendondeado*/
-	margin-right: 20px;
-	width: 80px;
-}
-
-header .avatar .flechita{
-	background: #dd4f24;
-	display: inline-block;
-	color: #ffffff;
-	height: 25px;
-	position: absolute;/*la misma posicion el objeto siempre segun el contenedor*/
-	right: 0;
-	text-align: center;
-	text-decoration: none;/*quitar linea hpervinculo*/
-	text-shadow: 2px 2px 1px #000000;
-	top: 10px;
-	width: 20px;
-}
-header .avatar .flechita:before{ /*antes del contenido se pone AFTER despues del contenido*/
-	content: "\e605";
-	font-family: "iconitos";
-
-}
-
-#nombre
-{
-	position: absolute;
-	right: 140px;
-}
-
-header .avatar .publicar{
-	background: #dd4f24;
-	display: inline-block;
-	color: #ffffff;
-	height: 30px;
-	position: absolute;
-<<<<<<< HEAD
-	right: 120px;
-=======
-	right: 72px;
->>>>>>> 38d36e98a5ee0b739f6df007fab5e2be5e0f98dc
-	text-align: center;
-	text-decoration: none;
-	top: 10px;
-	width: 80px;
-}
-header .avatar .publicar:before{
-	content: "\e601";
-	font-family: "iconitos";
-
-}
-
-.salir{
-	background: #dd4f24;
-	display: inline-block;
-	color: #ffffff;
-	height: 30px;
-	position: absolute;
-	right: 220px;
-	text-align: center;
-	text-decoration: none;
-	top: 30px;
-	width: 80px;
-}
-
-header .logo{
-	border-right: 1px solid #22bce0;
-	float: left;
-	margin-left: 15px;/* del borde hacia afuera*/
-	padding-right: 10px;/* del borde hacia el contenido*/
-	width: 80px;
-}
-
-header .logo img{
-	width: 80px;
-}
-
-header .titulo{
-	display: inline-block;/* para que no me cuente a partir del bloque*/
-	margin-left: 15px;
-
-}
-
-header .titulo h1{
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: normal;
-}
-
-header .titulo p{
-	color:#22bce0;
-	font-size: 14px;
-	font-style: italic;
-	font-weight: bold;
-}
-
-footer {
-	background: #dd4f24;
-	color: rgba(255,255,255,0.7);
-	height: 6em;
-	padding-top: 3em;
-	text-align: center;
-	font-size: 0.8em;
-}
-
-nav{
-	background: #22bce0;
-	border-left: 10px solid #ffffff;
-}
-
-nav .menu{
-	height: 50px;/*el width del nav se adecua a la pag */
-	line-height: 50px;
-	margin:0px;
-	margin-left: 10px;
-	padding: 0;
-	overflow-x:auto;/*para que siga en linea*/
-	white-space: nowrap;/*para q se pueda mover con scroll*/
-}
-
-nav .menu:before{
-	border-bottom: 25px solid transparent;
-	border-left: 10px solid #ffffff;
-	border-top: 25px solid transparent;
-	content: "";
-	left: 10px;
-	position: absolute;
-
-}
-
-nav .menu:: -webkit-scrollbar{
-	display:none; /*quitar scrollbars saf y chrome*/
-}
-
-
-nav .menu li{
-	display: inline-block;
-}
-
-nav .menu li a{
-	color: #ffffff;
-	display: block;
-	margin: 0 0.5em;
-	/* 
-		margin-top:0;
-		margin-bottom:0;
-		margin-left:0.5em;
-		margin-right:0.5em;
-	*/
-	padding:0 0.2em;
-	text-decoration: none;
-}
-
-nav .menu li a:hover{
-	background: rgba(0,0,0,0.1);
-}
-
-.posts{
-	padding: 0.5em;
-}
-
-.posts .post{
-	background: #ffffff;
-	border-radius: 0 0 0.5em 0.5em;
-	box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
-	margin-bottom: 0.5em;
-}
-
-.posts .post .acciones{
-	border-top:3px solid #22bce0;
-	height: 2.5em;
-}
-
-.posts .post .acciones .comenfavs{
-	float:right;
-	line-height: 3em;
-	margin-right: 0.5em;
-}
-
-.posts .post .acciones .comenfavs .comentarios{
-	background: #444444;
-	border-radius: 3px;
-	color:white;
-	text-decoration: none;
-}
-
-.posts .post .acciones .comenfavs .favoritos{
-	color:#fcb92d;
-	text-decoration: none;
-}
-
-.posts .post .acciones .comenfavs .favoritos:before{
-	font-family: "iconitos";
-	content:"\e602";
-	cursor: pointer;
-}
-
-.posts .post .acciones .comenfavs .nofavoritos{
-	color:#fcb92d;
-	text-decoration: none;
-}
-
-.posts .post .acciones .comenfavs .nofavoritos:before{
-	font-family: "iconitos";
-	content:"\e600";
-	cursor: pointer;
-
-}
-
-
-.posts .post .acciones .votos{
-	float:left;
-	margin-left: 0.5em;
-}
-
-.posts .post .acciones .votos p{
-	display: inline-block;
-}
-
-.posts .post .acciones .likes, .posts .post .acciones .nolikes{
-	font-family: "iconitos";
-	text-decoration: none;
-}
-
-.posts .post .acciones .likes{
-	color:green;
-	content:"\e603";
-}
-.posts .post .acciones .likes:before{
-	content:"\e603";
-}
-
-.posts .post .acciones .nolikes{
-	color:red;
-}
-.posts .post .acciones .nolikes:before{
-	content:"\e604";
-}
-
-.posts .post .detalles .autor a{
-	color: #dd4f24;
-}
-
-.posts .post .detalles .titulo a{
-	color: #444444;
-	text-decoration: none;
-}
-
-.posts .post .detalles{
-	height: 128px;
-	margin-left: 6.25em;
-}
-
-
-.posts .post .detalles .autor{
-	margin:0;
-}
-
-.posts .post .detalles .fecha{
-	float: right;
-	margin-right: 1em;
-}
-
-.posts .post .detalles .tags{
-	background:  #22bce0;
-	border-radius: 0.5em;
-	color:#ffffff;
-	display: inline-block;
-	margin-top: 1em; /*1 em = 12 pts o 1em = 16px.*/
-	padding: 0.2em 0.5em;
-
-}
-
-.posts .post .detalles .titulo{
-	font-size: .9em;
-	font-style: italic;
-	margin-bottom: 0.5em;
-}
-
-.posts .post .generales .imagen {
-	float:left;
-}
-
-.posts .post .generales .imagen img{
-	width:95px; 
-}
-
-@media screen and (max-width: 500px){
-	header .titulo {
-		height: 80px;
-	}
-	header .titulo h1{
-		display: none;
-	}
-}
-/*para ajustar la pantalla al header
-@media screen and (max-width:499px){
-
-	header .titulo{
-			height: 80px;
-	}
-
-	header .titulo h1{
-			display: none;
-	}
-
-}
-
-@media screen and (min-width: 500px), (max-width:1000px){
-
-	.posts .post{
-		display: inline-block;
-		margin-left:3px;
-		margin-right: 3px;
-		width: 48%;
-		
-	}
-
-@media screen and (min-width: 1001px){
-
-	aside{
-		background:green;
-		display: inline-block;
-		float: right;
-	}
-
-
-}
-}
-*/
-
-	
-	

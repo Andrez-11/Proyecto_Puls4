@@ -1,0 +1,301 @@
+gris_obscuro=#444444
+gris_claro=#e8e8e8
+box_shadow()
+	rgba(0,0,0,arguments)
+negro=#000000
+
+naranjita = #dd4f24
+blanco = #ffffff
+azulito = #22bce0
+amarillo = #fcb92d
+letra_foot = rgba(255,255,255,0.7)
+verde = #008000
+rojo= #FF0000
+
+
+
+@font-face 
+	font-family 'iconitos'
+	src url('fonts/icomoon.eot?-aiemkz')
+	src url('fonts/icomoon.eot?#iefix-aiemkz') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-aiemkz') format('woff'),
+		url('fonts/icomoon.ttf?-aiemkz') format('truetype'),
+		url('fonts/icomoon.svg?-aiemkz#icomoon') format('svg')
+	font-weight normal
+	font-style normal
+
+aside
+	background gris_obscuro
+	display none
+
+body
+	background gris_claro
+	color gris_obscuro
+	font-size 16px
+
+header
+	background gris_obscuro
+	box-shadow 5px 5px 5px box_shadow 0.2
+	color blanco
+	position relative
+	z-index 10
+
+	.avatar
+		position absolute
+		right 15px
+		top 15px
+
+		img 
+			border-radius 50%
+			margin-right 20px
+			width 80px
+
+		.flechita
+			background naranjita
+			display inline-block
+			color blanco
+			height 25px
+			position absolute
+			right 0
+			text-align center
+			text-decoration none
+			text-shadow 2px 2px 1px negro
+			top 10px
+			width 20px
+
+		.flechita:before
+			content "\e605"
+			font-family "iconitos"
+
+		.publicar
+			background naranjita
+			display inline-block
+			color blanco
+			height 30px
+			position absolute
+			right 120px
+			text-align center
+			text-decoration none
+			top 10px
+			width 80px
+
+
+	.avatar 
+		#nombre
+			position absolute
+			right 140px 
+
+		.publicar:before
+			content "\e601"
+			font-family "iconitos"
+
+
+
+		.salir
+			background naranjita
+			display inline-block
+			color blanco
+			height 30px
+			position absolute
+			right 220px
+			text-align center
+			text-decoration none
+			top 30px
+			width 80px
+
+
+ 
+	.logo
+		border-right 1px solid azulito
+		float left
+		margin-left 15px
+		padding-right 10px
+		width 80px
+
+
+		img
+			width 80px
+
+
+	.titulo
+		display inline-block
+		margin-left 15px
+
+
+
+		h1
+			font-family Arial
+			font-size 18px
+			font-weight normal
+
+
+		p
+			color azulito
+			font-size 14px
+			font-style italic
+			font-weight bold
+		
+
+footer 
+	background naranjita
+	color letra_foot
+	height 6em
+	padding-top 3em
+	text-align center
+	font-size 0.8em
+
+
+nav
+	background azulito
+	border-left 10px solid blanco
+
+
+	.menu
+		height 50px
+		line-height 50px
+		margin 0px
+		margin-left 10px
+		padding 0
+		overflow-x auto
+		white-space nowrap
+
+		li
+			display: inline-block
+
+			a
+				color blanco
+				display block
+				margin 0 0.5em
+				padding 0 0.2em
+				text-decoration none
+
+
+			a:hover
+				background box_shadow 0.2
+
+	.menu:before
+			border-bottom 25px solid transparent
+			border-left 10px solid blanco
+			border-top 25px solid transparent
+			content ""
+			left 10px
+			position absolute
+
+
+
+	.menu::-webkit-scrollbar
+			display none 
+		
+
+.posts
+	padding 0.5em;
+
+	.post
+		background blanco
+		border-radius 0 0 0.5em 0.5em
+		box-shadow 3px 3px 5px box_shadow 0.5
+		margin-bottom 0.5em
+
+		 .acciones
+			border-top 3px solid azulito
+			height 2.5em
+		
+
+			 .comenfavs
+				float right
+				line-height 3em
+				margin-right 0.5em
+			
+
+				 .comentarios
+					background gris_obscuro
+					border-radius 3px
+					color blanco
+					text-decoration none
+				
+
+				 .favoritos
+					color amarillo
+					text-decoration none
+
+
+				.favoritos:before
+					font-family "iconitos"
+					content "\e602"
+					cursor pointer
+
+
+				.nofavoritos
+					color amarillo
+					text-decoration none
+				
+
+				.nofavoritos:before
+					font-family "iconitos"
+					content "\e600"
+					cursor  pointer
+
+
+
+
+/* aqui empieza e4.css */
+.posts 
+	.post 
+		.acciones 
+			.votos
+				float left
+				margin-left 0.5em 
+				p
+					display inline-block
+			.likes,.nolikes
+				font-family "iconitos"
+				text-decoration none
+			.likes
+				color verde
+				content"\e603" 
+			.likes:before
+				content "\e603"
+			.nolikes
+				color rojo 
+			.nolikes:before
+				content "\e604"
+		.detalles
+			height  128px
+			margin-left  6.25em
+			.autor
+				margin 0 
+				a
+					color naranjita
+			.fecha
+				float  right
+				margin-right  1em
+			.tags
+				background	azulito
+				border-radius  0.5em
+				color blanco
+				display  inline-block
+				margin-top  1em /*1 em = 12 pts o 1em = 16px.*/
+				padding  0.2em 0.5em
+			.titulo
+				font-size  .9em
+				font-style  italic
+				margin-bottom  0.5em
+				a
+					color  gris_obscuro
+					text-decoration  none 	
+		.generales  
+			.imagen
+				float left 
+					img
+						width 95px 
+
+
+@media screen and (max-width: 500px)
+	header 
+		.titulo 
+			height 80px
+	
+	header 
+		.titulo h1
+			display none
+	
