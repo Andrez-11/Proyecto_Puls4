@@ -12,7 +12,20 @@ Diplomado.Router = Backbone.Router.extend({
 	},
 	index : function(){
 		console.log("Estás en el index");
-		this.cargarDatos();
+		if (this.postCollection.length > 0){
+			for (i = 0; i< this.postCollection.length; i++){
+				model = this.postCollection.at(i);
+				vista = new Diplomado.Views.SinglePost(
+						{tagName:"",
+						model : model, 
+						el : $(".posts")});
+				vista.render();
+				$(".posts").append(vista.$el);
+			};
+		}else
+		{
+			this.cargarDatos();
+		}
 		//to do...
 		/* 
 			ir al servidor a consultar mi bd de articulos
@@ -39,7 +52,8 @@ Diplomado.Router = Backbone.Router.extend({
 					fecha : data[id_articulo].date,
 					likes : data[id_articulo].likes,
 					tags : data[id_articulo].tags,
-					comentarios : data[id_articulo].comentarios
+					comentarios : data[id_articulo].comentarios,
+					listacomen: data[id_articulo].listacomentarios
 				})
 			});
 

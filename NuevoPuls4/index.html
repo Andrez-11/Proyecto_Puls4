@@ -72,11 +72,11 @@
 		<article>
 	</script>
 	<script id="postCompletotpl" type="text/x-handlebars-template">
-		<article class="post">
+		<article class="post completo">
 			<div class="generales">
+				<a class="regresar">Regresar al index</a>
 				<div class="imagen">
 					<img src="">
-					<a class="regresar">Regresar al index</a>
 				</div>
 
 				<div class="detalles">
@@ -102,8 +102,12 @@
 			<div>
 			{{contenido}}
 			</div>
-			<div class="listacomentarios"></div>
 		<article>
+			<div class="listacomentarios">
+			{{#each listacomen}}
+				<div class="comentario"><h2>{{this.usuario}} dijo: </h2>{{this.comentario}}
+			{{/each}}
+			</div>
 	</script>
 	<script src="js/app.js"></script>
 	<script src="js/Models/PostModel.js"></script>
