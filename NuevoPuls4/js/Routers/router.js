@@ -6,7 +6,8 @@ Diplomado.Router = Backbone.Router.extend({
 	initialize : function(){
 		this.datos = {};
 		this.postCollection = new Diplomado.Collections.PostCollection();
-		this.postView = new Diplomado.Views.PostView({collection : this.postCollection});
+		this.postView = new Diplomado.Views.PostView({
+								collection : this.postCollection});
 		Backbone.history.start();
 	},
 	index : function(){
@@ -52,6 +53,7 @@ Diplomado.Router = Backbone.Router.extend({
 			imagen : post.image,
 			fecha : post.date,
 			likes : post.likes,
+			tags : post.tags,
 			comentarios : post.comentarios
 		}));
 	}

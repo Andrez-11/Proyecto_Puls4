@@ -50,16 +50,18 @@
 				</div>
 
 				<div class="detalles">
-					<h2 class="titulo"><a href="#">{{titulo}}</a></h2>
+					<h2 class="titulo"><a id="{{id}}">{{titulo}}</a></h2>
 					<p class="autor">por <a href="#">{{autor}}</a></p>
-					<p class="tags">{{tag}} <a href="#"></a></p>			<p class="fecha">hace <strong>{{tiempo}}</strong> min </p>
+					{{#each tags}}
+					<p class="tags">{{this}} <a href="#"></a></p>	
+					{{/each}}		<p class="fecha">hace <strong>{{tiempo}}</strong> min </p>
 				</div>
 			</div>
 
 			<div class="acciones">
 				<div class="votos">
 					<a class="likes" href="#"></a>
-					<p>{{votos}}</p>
+					<p>{{likes}}</p>
 					<a class="nolikes" href="#"></a>
 					</div>
 				<div class="comenfavs">
