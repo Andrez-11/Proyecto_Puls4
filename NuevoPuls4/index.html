@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="css/puls4.css">
+	<script src="js/vendors/jquery-1.11.1.js"></script>
+	<script src="js/vendors/underscore.js"></script>
+	<script src="js/vendors/backbone.js"></script>
+	<script src="js/vendors/handlebars-v2.0.0.js"></script>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="imagenes/logo.png">
+		</div>
+		<div class="titulo">
+			<h1>Puls4: Comunidad de gente atractiva</h1>
+			<p>Stylus</p>
+		</div>
+		<div class="avatar">
+			<a class="publicar" href="#">Publicar</a>
+			<img src="imagenes/avatar.jpg">
+			<a class="flechita" href="#"></a>
+		</div>
+	</header>
+	<nav>
+		<ul class="menu">
+			<li><a href="#">Python</a></li>
+			<li><a href="#">HTML5</a></li>
+			<li><a href="#">Javascript</a></li>
+			<li><a href="#">Django</a></li>
+			<li><a href="#">CSS3</a></li>
+		</ul>
+	</nav>
+	<section class="posts">
+		
+	</section>
+	<footer>
+		<div>
+			<strong>Powered by Vinculación ITD</strong>
+			<p class="powered">Diplomado de tecnologías web</p>
+		</div>
+	</footer>
+	<script id="PostTemplate" type="text/x-handlebars-template">
+			<div class="generales">
+				<div class="imagen">
+					<img src="">
+				</div>
+
+				<div class="detalles">
+					<h2 class="titulo"><a href="#">{{titulo}}</a></h2>
+					<p class="autor">por <a href="#">{{autor}}</a></p>
+					<p class="tags">{{tag}} <a href="#"></a></p>			<p class="fecha">hace <strong>{{tiempo}}</strong> min </p>
+				</div>
+			</div>
+
+			<div class="acciones">
+				<div class="votos">
+					<a class="likes" href="#"></a>
+					<p>{{votos}}</p>
+					<a class="nolikes" href="#"></a>
+					</div>
+				<div class="comenfavs">
+					<a class="comentarios" href="#">{{comentarios}}</a>
+					<span class="nofavoritos"></span> 
+				</div>
+			</div>
+	</script>
+	<script src="js/app.js"></script>
+	<script src="js/Models/PostModel.js"></script>
+	<script src="js/Collections/PostCollection.js"></script>
+	<script src="js/Views/PostView.js"></script>
+	<script src="js/Routers/router.js"></script>
+</body>
+</html>

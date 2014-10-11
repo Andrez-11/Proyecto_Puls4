@@ -1,0 +1,1 @@
+Diplomado.Models.PostModel = Backbone.Model.extend({});
