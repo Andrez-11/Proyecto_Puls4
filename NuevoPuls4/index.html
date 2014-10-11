@@ -71,9 +71,42 @@
 			</div>
 		<article>
 	</script>
+	<script id="postCompletotpl" type="text/x-handlebars-template">
+		<article class="post">
+			<div class="generales">
+				<div class="imagen">
+					<img src="">
+				</div>
+
+				<div class="detalles">
+					<h2 class="titulo"><a id="{{id}}">{{titulo}}</a></h2>
+					<p class="autor">por <a href="#">{{autor}}</a></p>
+					{{#each tags}}
+					<p class="tags">{{this}} <a href="#"></a></p>	
+					{{/each}}		<p class="fecha">hace <strong>{{tiempo}}</strong> min </p>
+				</div>
+			</div>
+
+			<div class="acciones">
+				<div class="votos">
+					<a class="likes" href="#"></a>
+					<p>{{likes}}</p>
+					<a class="nolikes" href="#"></a>
+					</div>
+				<div class="comenfavs">
+					<a class="comentarios" href="#">{{comentarios}}</a>
+					<span class="nofavoritos"></span> 
+				</div>
+			</div>
+			<div>
+			{{contenido}}
+			</div>
+		<article>
+	</script>
 	<script src="js/app.js"></script>
 	<script src="js/Models/PostModel.js"></script>
 	<script src="js/Collections/PostCollection.js"></script>
+	<script src="js/Views/PostCompleto.js"></script>
 	<script src="js/Views/SinglePost.js"></script>
 	<script src="js/Views/PostView.js"></script>
 	<script src="js/Routers/router.js"></script>

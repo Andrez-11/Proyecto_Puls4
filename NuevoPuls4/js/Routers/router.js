@@ -25,6 +25,27 @@ Diplomado.Router = Backbone.Router.extend({
 	},
 	consulta_articulo : function(id_articulo){
 		console.log("Quieres ver el articulo: "+id_articulo);
+		var self = this;
+		$(".post").remove(); //quitamos todos los post
+		$.getJSON("allformated.json").then(function(data){
+			self.datos = data;
+			var postCompleto = new Diplomado.Views.PostCompleto({
+				model : new Diplomado.Models.PostModel({
+					id: id_articulo,
+					titulo : data[id_articulo].title,
+					contenido : data[id_articulo].content,
+					autor: data[id_articulo].author,
+					imagen : data[id_articulo].image,
+					fecha : data[id_articulo].date,
+					likes : data[id_articulo].likes,
+					tags : data[id_articulo].tags,
+					comentarios : data[id_articulo].comentarios
+				})
+			});
+
+			postCompleto.render();
+			$(".posts").append(postCompleto.$el);
+		});
 		/* 
 			ir al servidor a obtener solo el articulo seleccionado en caso que se ingrese directamente
 			si se ingresa desde el index, solo mandar el modelo...
